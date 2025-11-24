@@ -3,27 +3,24 @@
 
 /* --- PALETA DE CORES --- */
 :root {
-    --azul-principal: #1A53C9; /* Azul forte Arco */
-    --laranja-destaque: #E55B39; /* Laranja/Coral da Arco para CTA e Destaques */
-    --fundo-secundario: #f3aeae;
+    --azul-principal: #1A53C9; 
+    --laranja-destaque: #E55B39; 
+    --fundo-secundario: #fccfcf;
     --texto-principal: #333333; 
     --branco-puro: #FFFFFF;
     --branco-suave: #F9F9F9;
 }
 
-/* --- RESET ESSENCIAL --- */
 html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
 }
 
-/* --- 1. BASE --- */
 body {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
-   /* CORREÇÃO: Usa fundo neutro para contraste dos boxes */
    background: var(--fundo-secundario); 
    color: var(--texto-principal);
    font-family: 'Inter', Arial, sans-serif;
@@ -50,7 +47,6 @@ p {
     line-height: 1.6;
 }
 
-/* --- 2. CABEÇALHO (HEADER) --- */
 header {
     background: var(--azul-principal);
     color: var(--branco-puro);
@@ -102,7 +98,7 @@ h1 {
 }
 
 .box {
-    background: var(--branco-suave); /* Usando variável para consistência */
+    background: var(--branco-suave); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     padding: 30px;
     border-radius: 12px;
@@ -110,7 +106,6 @@ h1 {
     color: var(--texto-principal); 
 }
 
-/* Ajustes para o texto dentro dos boxes transparentes */
 .box h2 {
     color: var(--texto-principal);
     border-bottom: 3px solid var(--laranja-destaque);
@@ -188,7 +183,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-/* --- 4. BOTÕES E LINKS --- */
 a.button {
     display: inline-block;
     background: var(--laranja-destaque); 
@@ -235,7 +229,6 @@ a.button:hover {
 }
 
 
-/* --- 5. RODAPÉ (FOOTER) --- */
 footer {
     text-align: center;
     padding: 20px;
@@ -245,7 +238,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- MEDIA QUERIES (Responsividade) --- */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -272,7 +264,6 @@ footer {
     }
 }
 
-/* --- HALL DA FAMA: FORMULÁRIO --- */
 .hall-form {
     background: var(--branco-suave); 
     padding: 25px;
@@ -343,24 +334,21 @@ footer {
     transform: translateY(-1px);
 }
 
-/* --- HALL DA FAMA: LAYOUT DE GRID FLEXÍVEL (SOLUÇÃO PARA EXIBIR MAIS DE 2) --- */
 .hall-container {
     margin-top: 30px;
     display: grid;
-    /* CORREÇÃO: Usa auto-fit/minmax para exibir todos os cards em 3 colunas, se houver espaço */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 20px;
 }
 
 @media (max-width: 600px) {
     .hall-container {
-        grid-template-columns: 1fr; /* 1 coluna em celulares */
+        grid-template-columns: 1fr;
     }
 }
 
-/* --- HALL DA FAMA: ESTILO DOS CARDS E AÇÕES --- */
 .hall-card {
-    background-color: #274b7e; /* Fundo Escuro para Visual de Destaque */
+    background-color: #274b7e; 
     color: var(--branco-puro);
     border-radius: 15px; 
     padding: 25px;
@@ -401,7 +389,6 @@ footer {
     margin: 3px 0 0;
     font-size: 0.95rem;
     opacity: 0.9;
-    /* CORREÇÃO: Garante que o texto da categoria seja branco */
     color: var(--branco-puro); 
 }
 
@@ -410,7 +397,6 @@ footer {
     margin-top: 10px;
 }
 
-/* Estilo para a imagem de Evidência */
 .hall-card img {
     max-width: 100%;
     height: auto;
@@ -419,7 +405,6 @@ footer {
     object-fit: cover;
 }
 
-/* Badge de Posição (TOP 1, TOP 2, etc.) */
 .position-badge {
     position: absolute;
     top: 5px; 
@@ -433,7 +418,6 @@ footer {
     z-index: 10;
 }
 
-/* Container para Likes e Remover */
 .footer-actions {
     display: flex;
     justify-content: space-between;
@@ -477,4 +461,5 @@ footer {
 .remove-btn:hover {
     background: #C82333;
 }
+
 
