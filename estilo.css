@@ -5,7 +5,7 @@
 :root {
     --azul-principal: #1A53C9; /* Azul forte Arco */
     --laranja-destaque: #E55B39; /* Laranja/Coral da Arco para CTA e Destaques */
-    --fundo-secundario: #F5F7F9; 
+    --fundo-secundario: #f3aeae;
     --texto-principal: #333333; 
     --branco-puro: #FFFFFF;
     --branco-suave: #F9F9F9;
@@ -477,3 +477,4 @@ footer {
 .remove-btn:hover {
     background: #C82333;
 }
+
