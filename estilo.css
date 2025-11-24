@@ -11,9 +11,9 @@
     --branco-suave: #F9F9F9;
 }
 
-/* --- RESET ESSENCIAL PARA O STICKY FOOTER --- */
+/* --- RESET ESSENCIAL --- */
 html, body {
-    height: 100%; /* Garante que o html ocupe 100% da altura da janela */
+    height: 100%; 
     margin: 0;
     padding: 0;
 }
@@ -21,20 +21,18 @@ html, body {
 /* --- 1. BASE --- */
 body {
    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: #f5b3b3;
-    color: var(--texto-principal);
-    font-family: 'Inter', Arial, sans-serif;
+   flex-direction: column;
+   min-height: 100vh;
+   /* CORREÇÃO: Usa fundo neutro para contraste dos boxes */
+   background: var(--fundo-secundario); 
+   color: var(--texto-principal);
+   font-family: 'Inter', Arial, sans-serif;
 }
 
 section {
-    /* STICKY FOOTER: Faz a seção de conteúdo principal crescer */
     flex-grow: 1; 
-    
     padding: 60px 20px;
     max-width: 1100px;
-    /* Centraliza e garante que não há margens verticais */
     margin: 0 auto; 
 }
 
@@ -66,8 +64,8 @@ header {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -75,7 +73,7 @@ header {
 .header-content {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     max-width: 600px;
 }
 
@@ -100,11 +98,11 @@ h1 {
 }
 
 .box-centralizado h2 {
-    display: inline-block; /* Permite que o h2 seja centralizado pelo text-align: center do pai */
+    display: inline-block; 
 }
 
 .box {
-    background: #f9f7f4;
+    background: var(--branco-suave); /* Usando variável para consistência */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     padding: 30px;
     border-radius: 12px;
@@ -154,7 +152,6 @@ h1 {
 
 .recursos-grid {
     display: grid;
-    /* Define 2 colunas, se houver espaço (ou 1 coluna em telas pequenas) */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 15px;
     margin-top: 25px;
@@ -167,7 +164,6 @@ h1 {
     border-radius: 8px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
-    /* Herda o fundo claro do .box */
     background-color: var(--branco-suave); 
     color: var(--texto-principal);
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -192,28 +188,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-.recurso-item .icon {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-/* Destaque de cor opcional baseado no tipo de mídia */
-.recurso-item.youtube h4 {
-    color: #ff0000; /* Vermelho YouTube */
-}
-
-.recurso-item.spotify h4 {
-    color: #1DB954; /* Verde Spotify */
-}
-
-.recurso-item.article h4 {
-    color: #007bff; /* Azul padrão */
-}
-
-.recurso-item.video h4 {
-    color: #28a745; /* Verde para crescimento/sucesso */
-}
-
 /* --- 4. BOTÕES E LINKS --- */
 a.button {
     display: inline-block;
@@ -234,19 +208,19 @@ a.button:hover {
 }
 
 .cursos-lista {
-    max-height: 250px; /* ou altura similar aos outros boxes */
+    max-height: 250px;
     overflow-y: auto;
-    padding-right: 10px; /* evita cortar o texto com scroll */
+    padding-right: 10px;
 }
 
 .cursos-lista ul {
-    list-style: none; /* Remove os marcadores de lista padrão */
-    padding-left: 0; /* Remove o recuo padrão do UL */
+    list-style: none;
+    padding-left: 0;
 }
 
 .cursos-lista li {
     margin-bottom: 20px;
-    border-left: 4px solid var(--azul-principal); /* Borda lateral para cursos */
+    border-left: 4px solid var(--azul-principal); 
     padding-left: 15px;
 }
 
@@ -267,7 +241,6 @@ footer {
     padding: 20px;
     background-color: var(--azul-principal);
     color: var(--branco-puro);
-    /* ESSENCIAL: Margem zerada para colar no conteúdo */
     margin-top: 0; 
     font-size: 0.9rem;
 }
@@ -297,4 +270,210 @@ footer {
     .box {
         padding: 25px;
     }
+}
+
+/* --- HALL DA FAMA: FORMULÁRIO --- */
+.hall-form {
+    background: var(--branco-suave); 
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    display: block; 
+    gap: 0;
+    flex-direction: initial; 
+}
+
+.hall-form h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--azul-principal);
+    border-bottom: 2px solid var(--laranja-destaque);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.hall-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+}
+
+.hall-form input[type="text"], 
+.hall-form select,
+.hall-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.hall-form input[type="text"]:focus, 
+.hall-form select:focus,
+.hall-form input[type="file"]:focus {
+    border-color: var(--azul-principal);
+    outline: none;
+}
+
+.hall-form button {
+    display: block;
+    width: 100%;
+    background: var(--laranja-destaque); 
+    color: var(--branco-puro);
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.hall-form button:hover {
+    background: #c74b2f; 
+    transform: translateY(-1px);
+}
+
+/* --- HALL DA FAMA: LAYOUT DE GRID FLEXÍVEL (SOLUÇÃO PARA EXIBIR MAIS DE 2) --- */
+.hall-container {
+    margin-top: 30px;
+    display: grid;
+    /* CORREÇÃO: Usa auto-fit/minmax para exibir todos os cards em 3 colunas, se houver espaço */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .hall-container {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+    }
+}
+
+/* --- HALL DA FAMA: ESTILO DOS CARDS E AÇÕES --- */
+.hall-card {
+    background-color: #274b7e; /* Fundo Escuro para Visual de Destaque */
+    color: var(--branco-puro);
+    border-radius: 15px; 
+    padding: 25px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+    transition: transform 0.3s ease;
+    margin-bottom: 0; 
+}
+
+.hall-card:hover {
+    transform: translateY(-3px); 
+}
+
+.user-avatar { 
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 3px solid var(--branco-puro); 
+    margin: 0 auto 10px; 
+    display: block;
+}
+
+.hall-card h3 {
+    margin: 0;
+    font-size: 1.3rem; 
+    font-weight: 700;
+    color: var(--branco-puro);
+    border-bottom: none; 
+    padding-bottom: 0;
+}
+
+.hall-card p {
+    margin: 3px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    /* CORREÇÃO: Garante que o texto da categoria seja branco */
+    color: var(--branco-puro); 
+}
+
+.hall-card audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Estilo para a imagem de Evidência */
+.hall-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+/* Badge de Posição (TOP 1, TOP 2, etc.) */
+.position-badge {
+    position: absolute;
+    top: 5px; 
+    right: 10px;
+    background: var(--laranja-destaque); 
+    color: var(--branco-puro);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Container para Likes e Remover */
+.footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.like-btn {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.2s, transform .2s ease;
+    user-select: none;
+    display: inline-flex; 
+    gap: 5px;
+    align-items: center;
+    color: var(--branco-puro);
+}
+
+.like-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.remove-btn {
+    background: #DC3545; 
+    color: var(--branco-puro);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.remove-btn:hover {
+    background: #C82333;
 }
